@@ -7,9 +7,9 @@ edition = "2024"
 build-command = ["build"]
 
 run-command = [
-    "qemu-system-x86_64", "-drive", "format=raw, file = {}"
+    "qemu-system-x86_64", "-drive", "format=raw,file={}"
 ]
 
 [dependencies]
 bootloader = "0.9"
-x86_64 = "0.13"
+x86_64 = "0.15.2"
