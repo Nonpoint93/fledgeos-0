@@ -2,6 +2,8 @@
 #![no_main]
 #![feature(core_intrinsics)]
 
+use x86_64::instructions::{hlt};
+
 //! # Minimal Bare-Metal Rust Program
 //! This program runs without the standard library and without a main function.
 //! It writes a character to the VGA text buffer and enters an infinite loop.
@@ -24,6 +26,8 @@ pub fn panic(_info: &PanicInfo) -> ! {
     }
 }
 
+
+
 /// Entry point of the program.
 /// This function writes a character to the VGA framebuffer
 /// and then enters an infinite loop.
@@ -42,5 +46,7 @@ pub extern "C" fn _start() -> ! {
             .write_volatile(0x30); // ASCII '0' with default color
     }
 
-    loop {}
+    loop {
+        hlt();
+    }
 }
