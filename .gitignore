@@ -9,3 +9,6 @@ target/
 
 # IDEs/editors
 .vscode/
+
+# Binaries
+kernel.bin

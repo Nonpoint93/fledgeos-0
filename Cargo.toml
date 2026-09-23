@@ -5,11 +5,9 @@ edition = "2024"
 
 [package.metadata.bootimage]
 build-command = ["build"]
-
-run-command = [
-    "qemu-system-x86_64", "-drive", "format=raw, file = {}"
-]
+run-command = ["qemu-system-x86_64", "-drive", "format=raw,file={}"]
 
 [dependencies]
 bootloader = "0.9"
-x86_64 = "0.13"
+x86_64 = "0.15.2"
+
